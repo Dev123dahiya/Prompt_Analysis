@@ -15,6 +15,7 @@ The benchmark focuses on a **Leave Management System** for a mid-sized company. 
 | `prompt.md` | The original coding prompt given to an LLM. |
 | `justification.md` | A structured comparison framework for evaluating Response A and Response B. |
 | `golden_response/` | A structured executable reference solution for the core backend/domain logic. |
+| `golden_response.py` | Compatibility launcher for the structured golden response package. |
 | `README.md` | Project overview, run instructions, and evaluation methodology. |
 
 ## Repository Structure
@@ -23,6 +24,7 @@ The benchmark focuses on a **Leave Management System** for a mid-sized company. 
 Prompt_Analysis/
 |-- prompt.md
 |-- justification.md
+|-- golden_response.py
 |-- golden_response/
 |   |-- __main__.py
 |   |-- cli.py
@@ -83,6 +85,12 @@ Run the built-in self-test:
 
 ```bash
 python -m golden_response --self-test
+```
+
+The root launcher also works:
+
+```bash
+python golden_response.py --self-test
 ```
 
 Expected output:
