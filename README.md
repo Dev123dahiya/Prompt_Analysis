@@ -26,6 +26,7 @@ The benchmark is centered on a **Leave Management System** for a mid-sized organ
 | `justification.md` | Structured comparison framework and final verdict for Response A vs Response B. |
 | `golden_response.py` | Root-level launcher required by the submission checklist. |
 | `golden_response/` | Modular executable reference implementation for the core backend/domain behavior. |
+| `golden_response/goldenresponse.md` | Written golden-output explanation for the prompt response. |
 | `README.md` | Project overview, run instructions, and evaluation notes. |
 
 ## Repository Structure
@@ -38,6 +39,7 @@ Prompt_Analysis/
 |-- golden_response.py
 `-- golden_response/
     |-- README.md
+    |-- goldenresponse.md
     |-- __init__.py
     |-- __main__.py
     |-- cli.py
