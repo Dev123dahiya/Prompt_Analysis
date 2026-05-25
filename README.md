@@ -14,7 +14,7 @@ The benchmark focuses on a **Leave Management System** for a mid-sized company. 
 | --- | --- |
 | `prompt.md` | The original coding prompt given to an LLM. |
 | `justification.md` | A structured comparison framework for evaluating Response A and Response B. |
-| `golden_response.py` | A self-contained executable reference solution for the core backend/domain logic. |
+| `golden_response/` | A structured executable reference solution for the core backend/domain logic. |
 | `README.md` | Project overview, run instructions, and evaluation methodology. |
 
 ## Repository Structure
@@ -23,7 +23,17 @@ The benchmark focuses on a **Leave Management System** for a mid-sized company. 
 Prompt_Analysis/
 |-- prompt.md
 |-- justification.md
-|-- golden_response.py
+|-- golden_response/
+|   |-- __main__.py
+|   |-- cli.py
+|   |-- config.py
+|   |-- errors.py
+|   |-- models.py
+|   |-- security.py
+|   |-- server.py
+|   |-- service.py
+|   |-- tests.py
+|   `-- validators.py
 `-- README.md
 ```
 
@@ -46,7 +56,7 @@ The prompt asks an LLM to build a MERN-stack Leave Management System with:
 
 ## Golden Response
 
-`golden_response.py` is a single-file Python reference implementation. It is not intended to replace the requested MERN stack application. Instead, it provides an executable benchmark solution for the most important backend and business-rule behavior.
+`golden_response/` is a modular Python reference implementation. It is not intended to replace the requested MERN stack application. Instead, it provides an executable benchmark solution for the most important backend and business-rule behavior.
 
 It includes:
 
@@ -72,7 +82,7 @@ The golden response uses only the Python standard library.
 Run the built-in self-test:
 
 ```bash
-python golden_response.py --self-test
+python -m golden_response --self-test
 ```
 
 Expected output:
@@ -84,7 +94,7 @@ Self-test passed.
 Start the local reference API:
 
 ```bash
-python golden_response.py --serve --port 8000
+python -m golden_response --serve --port 8000
 ```
 
 API base URL:
@@ -135,7 +145,7 @@ Likert Score: 6
 - Public holiday handling is not included.
 - Email notifications are not included.
 - The golden response uses in-memory storage instead of MongoDB.
-- The Python file is a benchmark reference, not a full MERN deployment.
+- The Python package is a benchmark reference, not a full MERN deployment.
 - A production implementation should still use the requested stack: React, Vite, Tailwind CSS, Express, MongoDB, Mongoose, JWT httpOnly cookies, bcryptjs, express-validator, helmet, cors, and express-rate-limit.
 
 ## Submission Link
