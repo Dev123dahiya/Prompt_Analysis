@@ -3,81 +3,86 @@
 ![Language](https://img.shields.io/badge/language-Python-blue)
 ![Benchmark](https://img.shields.io/badge/type-LLM%20coding%20benchmark-green)
 ![Domain](https://img.shields.io/badge/domain-Leave%20Management-orange)
+![Status](https://img.shields.io/badge/status-complete-brightgreen)
 
-This repository contains a complete LLM benchmark package for evaluating responses to a domain-specific full-stack coding task.
+This repository contains a complete benchmark package for evaluating LLM responses to a realistic, domain-specific full-stack coding task.
 
-The benchmark focuses on a **Leave Management System** for a mid-sized company. It tests whether an LLM can understand realistic product requirements, implement business rules, reason about security, and produce maintainable production-style code.
+The benchmark is centered on a **Leave Management System** for a mid-sized organization. It tests whether an LLM can interpret detailed product requirements, implement business rules, apply security best practices, document setup and deployment, and produce maintainable production-style code.
 
-## What This Repository Includes
+## Repository Contents
 
-| File | Purpose |
+| Path | Description |
 | --- | --- |
-| `prompt.md` | The original coding prompt given to an LLM. |
-| `justification.md` | A structured comparison framework for evaluating Response A and Response B. |
-| `golden_response/` | A structured executable reference solution for the core backend/domain logic. |
-| `golden_response.py` | Compatibility launcher for the structured golden response package. |
-| `README.md` | Project overview, run instructions, and evaluation methodology. |
+| `prompt.md` | Original MERN-stack coding prompt used for evaluation. |
+| `justification.md` | Structured comparison framework and final verdict for Response A vs Response B. |
+| `golden_response.py` | Root-level launcher required by the submission checklist. |
+| `golden_response/` | Modular executable reference implementation for the core backend/domain behavior. |
+| `README.md` | Project overview, run instructions, and evaluation notes. |
 
-## Repository Structure
+## Folder Structure
 
 ```text
 Prompt_Analysis/
+|-- README.md
 |-- prompt.md
 |-- justification.md
 |-- golden_response.py
-|-- golden_response/
-|   |-- __main__.py
-|   |-- cli.py
-|   |-- config.py
-|   |-- errors.py
-|   |-- models.py
-|   |-- security.py
-|   |-- server.py
-|   |-- service.py
-|   |-- tests.py
-|   `-- validators.py
-`-- README.md
+`-- golden_response/
+    |-- README.md
+    |-- __init__.py
+    |-- __main__.py
+    |-- cli.py
+    |-- config.py
+    |-- errors.py
+    |-- models.py
+    |-- security.py
+    |-- server.py
+    |-- service.py
+    |-- tests.py
+    `-- validators.py
 ```
 
-## Benchmark Overview
+## Benchmark Task
 
 The prompt asks an LLM to build a MERN-stack Leave Management System with:
 
-- Employee, Manager, and Admin roles.
-- Secure JWT authentication.
-- Role-based dashboards.
+- Employee, Manager, and Admin role flows.
+- Secure JWT authentication using httpOnly cookies.
+- Role-based dashboards and permissions.
 - Leave request creation, editing, cancellation, approval, and rejection.
-- Leave balance enforcement.
 - Weekday-only leave calculation.
+- Leave balance enforcement.
 - Pending request overlap prevention.
-- Department-restricted manager permissions.
-- Admin policy configuration.
+- Department-scoped manager access.
+- Admin policy management and user management.
 - CSV report generation.
-- Responsive, accessible frontend requirements.
-- Deployment documentation for Vercel, Render, and MongoDB Atlas.
+- Responsive and accessible frontend requirements.
+- Deployment guidance for Vercel, Render, and MongoDB Atlas.
 
 ## Golden Response
 
-`golden_response/` is a modular Python reference implementation. It is not intended to replace the requested MERN stack application. Instead, it provides an executable benchmark solution for the most important backend and business-rule behavior.
+The `golden_response/` folder contains a structured Python reference implementation. It is designed for benchmark portability and focuses on the core backend rules from the prompt.
 
 It includes:
 
-- Authentication with signed tokens.
+- Signed-token authentication.
 - Password hashing.
 - Login and logout rate limiting.
-- Structured API-style error responses.
+- Structured API-style errors.
 - Input sanitization and email validation.
 - Weekday-only leave day calculation.
-- Balance checks against annual, sick, and casual leave policies.
-- Pending request overlap detection.
+- Leave policy and balance checks.
+- Pending leave overlap detection.
 - Manager department authorization.
-- Admin override behavior.
-- User deactivation handling.
+- Admin override handling.
+- Pending request rejection on user deactivation.
 - CSV report generation.
-- A small HTTP API using the Python standard library.
-- Built-in self-test coverage for the main edge cases.
+- A small standard-library HTTP API.
+- Built-in self-test coverage for important edge cases.
 
-## How to Run
+> Note: The production prompt asks for a MERN implementation. The Python golden response is a portable reference solution for the benchmark's business logic, not a replacement for a full MERN deployment.
+
+## Running the Reference Implementation
 
 The golden response uses only the Python standard library.
 
@@ -87,7 +92,7 @@ Run the built-in self-test:
 python -m golden_response --self-test
 ```
 
-The root launcher also works:
+The root launcher also supports the required file name:
 
 ```bash
 python golden_response.py --self-test
@@ -111,7 +116,7 @@ API base URL:
 http://127.0.0.1:8000
 ```
 
-## Test Credentials
+## Seeded Test Credentials
 
 | Role | Email | Password |
 | --- | --- | --- |
@@ -121,25 +126,25 @@ http://127.0.0.1:8000
 
 ## Evaluation Methodology
 
-Responses should be evaluated on both implementation quality and justification quality.
+Responses should be evaluated on implementation quality, requirement coverage, and the quality of the accompanying justification.
 
-Primary evaluation criteria:
+| Criterion | What to Check |
+| --- | --- |
+| Requirement coverage | All explicit UI, API, security, data-processing, and documentation constraints are addressed. |
+| Executability | Code can be run or integrated with clear setup instructions. |
+| Business logic | Leave balances, weekday counting, overlap prevention, admin override, and manager restrictions are correct. |
+| Security | Authentication, password hashing, validation, cookies, CORS, rate limits, and error handling are implemented safely. |
+| Frontend quality | Dashboards are role-aware, responsive, accessible, and easy to use. |
+| Backend quality | APIs are RESTful, validated, structured, and maintainable. |
+| Documentation | Setup, environment variables, deployment, test credentials, and limitations are clearly documented. |
+| Maintainability | Code is readable, modular, consistently named, and easy to extend. |
 
-- **Requirement coverage:** Does the response satisfy the explicit prompt constraints?
-- **Executability:** Can the submitted code run with clear setup instructions?
-- **Business logic correctness:** Are leave balances, overlaps, weekday calculations, and role permissions handled correctly?
-- **Security:** Are authentication, password handling, validation, cookies, CORS, rate limits, and error messages implemented safely?
-- **Frontend quality:** Are dashboards responsive, accessible, role-aware, and user-friendly?
-- **Backend quality:** Are APIs RESTful, structured, validated, and maintainable?
-- **Documentation:** Are setup, environment variables, deployment steps, test credentials, and limitations explained clearly?
-- **Maintainability:** Is the code readable, modular, properly named, and easy to extend?
+## Comparison Result
 
-## Comparison Summary
+The included `justification.md` evaluates two model responses:
 
-The included `justification.md` compares two model responses:
-
-- **Response A:** Strong architectural explanation, but mostly conceptual and not directly executable.
-- **Response B:** Stronger practical implementation with schemas, middleware, routes, dashboard code, CSV export, and README content.
+- **Response A:** Strong architecture-level explanation, but mostly conceptual and not directly executable.
+- **Response B:** Stronger practical implementation with schemas, middleware, route logic, dashboard code, CSV export, and README content.
 
 Final verdict:
 
@@ -150,15 +155,13 @@ Likert Score: 6
 
 ## Known Limitations
 
-- Public holiday handling is not included.
-- Email notifications are not included.
-- The golden response uses in-memory storage instead of MongoDB.
-- The Python package is a benchmark reference, not a full MERN deployment.
-- A production implementation should still use the requested stack: React, Vite, Tailwind CSS, Express, MongoDB, Mongoose, JWT httpOnly cookies, bcryptjs, express-validator, helmet, cors, and express-rate-limit.
+- Public holiday handling is intentionally out of scope.
+- Email notifications are not implemented.
+- The reference implementation uses in-memory storage instead of MongoDB.
+- The Python package is a benchmark reference, not a full MERN application.
+- A production solution should still use the requested stack: React, Vite, Tailwind CSS, Express, MongoDB, Mongoose, JWT cookies, bcryptjs, express-validator, helmet, cors, and express-rate-limit.
 
-## Submission Link
-
-GitHub repository:
+## Repository Link
 
 ```text
 https://github.com/Dev123dahiya/Prompt_Analysis
