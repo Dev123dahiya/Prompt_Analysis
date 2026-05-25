@@ -7,10 +7,7 @@
 
 ## Project Overview
 
-This repository contains a complete benchmark package for evaluating LLM responses to a realistic, domain-specific full-stack coding task.
-
-The benchmark is centered on a **Leave Management System** for a mid-sized organization. It tests whether an LLM can interpret detailed product requirements, implement business rules, apply security best practices, document setup and deployment, and produce maintainable production-style code.
-
+The Benchmark Repository includes a comprehensive benchmark set whcih will aid in evaluation of the efficiency of the LLM in performing a end-to-end coding task of the real world.The scope of the benchmark includes **Leave Management System** of a medium-sized company. The aim of benchmark test is to evaluate how well an LLM can comprehend the product requirements, perform business logic, practice security principles, create documentation for the deployment, and produce quality code.
 ## Links
 
 | Resource | URL |
@@ -22,11 +19,11 @@ The benchmark is centered on a **Leave Management System** for a mid-sized organ
 
 | Path | Description |
 | --- | --- |
-| `prompt.md` | Original MERN-stack coding prompt used for evaluation. |
+| `prompt.md` | Prompt written by me to make the response. |
 | `justification.md` | Structured comparison framework and final verdict for Response A vs Response B. |
 | `golden_response/` | Modular executable reference implementation for the core backend/domain behavior. |
-| `golden_response/goldenresponse.md` | Written golden-output explanation for the prompt response. |
-| `README.md` | Project overview, run instructions, and evaluation notes. |
+| `golden_response/goldenresponse.md` | Best responce I got to do my project. |
+| `README.md` | All the project overveiw and the evaluation criterias. |
 
 ## Repository Structure
 
@@ -123,42 +120,38 @@ http://127.0.0.1:8000
 
 | Role | Email | Password |
 | --- | --- | --- |
-| Employee | `employee@example.com` | `Password123!` |
-| Manager | `manager@example.com` | `Password123!` |
-| Admin | `admin@example.com` | `Password123!` |
+| Employee | `devkumar@gmail.com` | `pssword123!` |
+| Manager | `mnager@example.com` | `psswor11` |
+| Admin | `heh@gmail.com` | `psswrd1` |
 
 ## Evaluation Methodology
-
-Responses should be evaluated on implementation quality, requirement coverage, correctness, maintainability, and the quality of the accompanying justification. The goal is not only to check whether a response mentions the requested features, but whether it provides a solution that could realistically be built, tested, reviewed, and deployed.
+Response solutions must be judged on the basis of implementation, completeness, correctness, maintainability, and the justification provided. The purpose of evaluation is not just to see that the response solution includes the required features, but whether such a solution would be possible to develop and implement.
 
 ### Scoring Rubric
 
 | Category | Weight | What to Evaluate |
-| --- | ---: | --- |
-| Requirement coverage | 20% | Checks whether all explicit prompt requirements are addressed, including role dashboards, REST endpoints, leave policies, CSV reports, validation, documentation, and deployment notes. |
-| Functional correctness | 20% | Verifies the actual business rules: weekday-only day calculation, balance enforcement, pending overlap prevention, manager department restriction, admin override behavior, and user deactivation handling. |
-| Backend quality | 15% | Reviews API design, Express route structure, Mongoose models, indexes, middleware, pagination, filtering, structured JSON errors, and separation of concerns. |
-| Security and validation | 15% | Checks password hashing, JWT httpOnly cookies, safe cookie options, CORS restrictions, Helmet, rate limiting, input sanitization, email validation, and prevention of sensitive data leakage. |
-| Frontend quality | 10% | Evaluates role-based dashboards, responsive layout, modal behavior, accessible controls, ARIA labels, keyboard navigation, route lazy loading, and debounced search. |
-| Documentation and deployment readiness | 10% | Checks README clarity, local setup steps, environment variable tables, seed instructions, test credentials, Vercel/Render/MongoDB Atlas deployment guidance, and known limitations. |
-| Maintainability and code organization | 10% | Evaluates readability, modularity, naming, comments, error handling, edge-case coverage, and whether the implementation can be extended safely. |
-
+| --- | ---: | --- || Coverage of Requirements | 20% | Ensures all explicitly stated prompt requirements have been met, such as role dashboards, REST endpoints, leave policies, CSV files, validation, documentation, and deployment instructions. |
+| Correctness of Functionality | 20% | Validates real-life business logic: weekday only day calculation, balance validation, overlapping pending leave prevention, department restriction for managers, admin overrides, and user deactivation management. |
+| Backend Quality | 15% | Evaluates API design, express routing, mongoose schemas, indexes, middleware use, pagination, filters, error handling through JSON response format, and separation of concerns. |
+| Security and Validation | 15% | Checks for password encryption, http-only cookies, secured cookies, cors headers, helmet, rate limiting, sanitizing user inputs, validating emails, and not leaking any private information. |
+| Frontend Quality | 10% | Ensures role-based dashboard, responsiveness of the designs, modal working, accessibility of the controls, proper ARIA labeling, keyboard navigation, lazy loading of the routes, and search bar debounce. || Documentation and Deployment Readiness | 10% | Confirms that README is readable, installation process is possible locally, list of environment variables, seeding of database, authentication details, deployment on Vercel, Render, MongoDB Atlas, and constraints understanding. |
+| Maintainability & Organization | 10% | Evaluates the code quality, modularity of the code, consistent variable names, comments in the code, proper handling of the errors, considerations for the edge cases, and extent of code maintainability. |
 ### Suggested Rating Scale
 
 | Score | Meaning |
 | --- | --- |
-| 1 | Fails the task; mostly irrelevant or non-functional. |
-| 2 | Mentions some requirements but lacks usable implementation. |
-| 3 | Partial implementation with major missing workflows or unsafe assumptions. |
-| 4 | Usable foundation, but important constraints or edge cases are missing. |
-| 5 | Good response that satisfies most requirements with moderate gaps. |
-| 6 | Strong response with executable, well-structured implementation and only minor gaps. |
-| 7 | Excellent production-quality response that fully satisfies explicit and implicit requirements. |
+| 1 | The task cannot be accomplished satisfactorily by the process, being mostly useless or dysfunctional. |
+| 2 | References are made to various requirements, yet without implementing any useful functionality. |
+| 3 | Partial implementation is achieved, but vital steps in the workflow are missing or assumptions are dangerous. |
+| 4 | The solution works functionally, but with significant limitations or lacking edge cases. |
+| 5 | A satisfactory solution that satisfies the majority of the requirements, although not perfect. |
+| 6 | An excellent solution, properly implemented, with a few minor flaws. |
+| 7 | A production-level solution meeting all relevant requirements. |
 
 ### Evaluation Workflow
 
 1. Read `prompt.md` and list all explicit constraints.
-2. Check whether the response provides runnable code, not only an architecture description.
+2. Check whether response provides is runnable code, not only an architecture description.
 3. Validate role-specific behavior for Employee, Manager, and Admin users.
 4. Test leave-specific edge cases:
    - weekend exclusion
@@ -169,8 +162,8 @@ Responses should be evaluated on implementation quality, requirement coverage, c
    - deactivating a user with pending requests
 5. Review security controls and confirm that sensitive data, especially password hashes, is never returned.
 6. Inspect frontend responsiveness and accessibility requirements.
-7. Review documentation for setup, environment variables, deployment, test users, and limitations.
-8. Assign a final score using the 1-7 scale and explain the decision with concrete evidence.
+7. Review the documentation for setup, environment variables, deployment, test users.
+8. Assign a final score between the 1-7 scale and explain the decision with concrete evidence and suitable facts.
 
 ### What a Strong Response Should Demonstrate
 
@@ -191,15 +184,6 @@ Final verdict:
 Response B is better than Response A.
 Likert Score: 6
 ```
-
-## Known Limitations
-
-- Public holiday handling is intentionally out of scope.
-- Email notifications are not implemented.
-- The reference implementation uses in-memory storage instead of MongoDB.
-- The Python package is a benchmark reference, not a full MERN application.
-- A production solution should still use the requested stack: React, Vite, Tailwind CSS, Express, MongoDB, Mongoose, JWT cookies, bcryptjs, express-validator, helmet, cors, and express-rate-limit.
-
 ## Repository Link
 
 ```text
