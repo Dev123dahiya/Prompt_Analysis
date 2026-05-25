@@ -31,7 +31,6 @@ Prompt_Analysis/
 |-- README.md
 |-- prompt.md
 |-- justification.md
-|-- golden_response.py
 `-- golden_response/
     |-- README.md
     |-- goldenresponse.md
@@ -52,7 +51,6 @@ Prompt_Analysis/
 
 | File | Purpose |
 | --- | --- |
-| `golden_response.py` | Root-level compatibility launcher required by the submission checklist. |
 | `golden_response/__main__.py` | Allows the package to run with `python -m golden_response`. |
 | `golden_response/cli.py` | Provides command-line options for self-test and local server mode. |
 | `golden_response/config.py` | Stores shared constants such as roles, leave types, date format, and token TTL. |
@@ -70,12 +68,6 @@ Run the built-in self-test:
 
 ```bash
 python -m golden_response --self-test
-```
-
-The root launcher also works:
-
-```bash
-python golden_response.py --self-test
 ```
 
 Expected output:

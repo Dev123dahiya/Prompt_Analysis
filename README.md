@@ -24,7 +24,6 @@ The benchmark is centered on a **Leave Management System** for a mid-sized organ
 | --- | --- |
 | `prompt.md` | Original MERN-stack coding prompt used for evaluation. |
 | `justification.md` | Structured comparison framework and final verdict for Response A vs Response B. |
-| `golden_response.py` | Root-level launcher required by the submission checklist. |
 | `golden_response/` | Modular executable reference implementation for the core backend/domain behavior. |
 | `golden_response/goldenresponse.md` | Written golden-output explanation for the prompt response. |
 | `README.md` | Project overview, run instructions, and evaluation notes. |
@@ -36,7 +35,6 @@ Prompt_Analysis/
 |-- README.md
 |-- prompt.md
 |-- justification.md
-|-- golden_response.py
 `-- golden_response/
     |-- README.md
     |-- goldenresponse.md
@@ -101,12 +99,6 @@ Run the built-in self-test:
 
 ```bash
 python -m golden_response --self-test
-```
-
-The root launcher also supports the required file name:
-
-```bash
-python golden_response.py --self-test
 ```
 
 Expected output:
