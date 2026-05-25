@@ -5,6 +5,8 @@
 ![Domain](https://img.shields.io/badge/domain-Leave%20Management-orange)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
 
+## Project Overview
+
 This repository contains a complete benchmark package for evaluating LLM responses to a realistic, domain-specific full-stack coding task.
 
 The benchmark is centered on a **Leave Management System** for a mid-sized organization. It tests whether an LLM can interpret detailed product requirements, implement business rules, apply security best practices, document setup and deployment, and produce maintainable production-style code.
@@ -19,7 +21,7 @@ The benchmark is centered on a **Leave Management System** for a mid-sized organ
 | `golden_response/` | Modular executable reference implementation for the core backend/domain behavior. |
 | `README.md` | Project overview, run instructions, and evaluation notes. |
 
-## Folder Structure
+## Repository Structure
 
 ```text
 Prompt_Analysis/
@@ -82,7 +84,7 @@ It includes:
 
 > Note: The production prompt asks for a MERN implementation. The Python golden response is a portable reference solution for the benchmark's business logic, not a replacement for a full MERN deployment.
 
-## Running the Reference Implementation
+## Instructions for Running/Testing the Code
 
 The golden response uses only the Python standard library.
 
