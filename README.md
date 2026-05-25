@@ -11,6 +11,13 @@ This repository contains a complete benchmark package for evaluating LLM respons
 
 The benchmark is centered on a **Leave Management System** for a mid-sized organization. It tests whether an LLM can interpret detailed product requirements, implement business rules, apply security best practices, document setup and deployment, and produce maintainable production-style code.
 
+## Links
+
+| Resource | URL |
+| --- | --- |
+| GitHub Repository | `https://github.com/Dev123dahiya/Prompt_Analysis` |
+| Live Deployment | `https://leave-request-management-system.vercel.app` |
+
 ## Repository Contents
 
 | Path | Description |
@@ -128,18 +135,54 @@ http://127.0.0.1:8000
 
 ## Evaluation Methodology
 
-Responses should be evaluated on implementation quality, requirement coverage, and the quality of the accompanying justification.
+Responses should be evaluated on implementation quality, requirement coverage, correctness, maintainability, and the quality of the accompanying justification. The goal is not only to check whether a response mentions the requested features, but whether it provides a solution that could realistically be built, tested, reviewed, and deployed.
 
-| Criterion | What to Check |
+### Scoring Rubric
+
+| Category | Weight | What to Evaluate |
+| --- | ---: | --- |
+| Requirement coverage | 20% | Checks whether all explicit prompt requirements are addressed, including role dashboards, REST endpoints, leave policies, CSV reports, validation, documentation, and deployment notes. |
+| Functional correctness | 20% | Verifies the actual business rules: weekday-only day calculation, balance enforcement, pending overlap prevention, manager department restriction, admin override behavior, and user deactivation handling. |
+| Backend quality | 15% | Reviews API design, Express route structure, Mongoose models, indexes, middleware, pagination, filtering, structured JSON errors, and separation of concerns. |
+| Security and validation | 15% | Checks password hashing, JWT httpOnly cookies, safe cookie options, CORS restrictions, Helmet, rate limiting, input sanitization, email validation, and prevention of sensitive data leakage. |
+| Frontend quality | 10% | Evaluates role-based dashboards, responsive layout, modal behavior, accessible controls, ARIA labels, keyboard navigation, route lazy loading, and debounced search. |
+| Documentation and deployment readiness | 10% | Checks README clarity, local setup steps, environment variable tables, seed instructions, test credentials, Vercel/Render/MongoDB Atlas deployment guidance, and known limitations. |
+| Maintainability and code organization | 10% | Evaluates readability, modularity, naming, comments, error handling, edge-case coverage, and whether the implementation can be extended safely. |
+
+### Suggested Rating Scale
+
+| Score | Meaning |
 | --- | --- |
-| Requirement coverage | All explicit UI, API, security, data-processing, and documentation constraints are addressed. |
-| Executability | Code can be run or integrated with clear setup instructions. |
-| Business logic | Leave balances, weekday counting, overlap prevention, admin override, and manager restrictions are correct. |
-| Security | Authentication, password hashing, validation, cookies, CORS, rate limits, and error handling are implemented safely. |
-| Frontend quality | Dashboards are role-aware, responsive, accessible, and easy to use. |
-| Backend quality | APIs are RESTful, validated, structured, and maintainable. |
-| Documentation | Setup, environment variables, deployment, test credentials, and limitations are clearly documented. |
-| Maintainability | Code is readable, modular, consistently named, and easy to extend. |
+| 1 | Fails the task; mostly irrelevant or non-functional. |
+| 2 | Mentions some requirements but lacks usable implementation. |
+| 3 | Partial implementation with major missing workflows or unsafe assumptions. |
+| 4 | Usable foundation, but important constraints or edge cases are missing. |
+| 5 | Good response that satisfies most requirements with moderate gaps. |
+| 6 | Strong response with executable, well-structured implementation and only minor gaps. |
+| 7 | Excellent production-quality response that fully satisfies explicit and implicit requirements. |
+
+### Evaluation Workflow
+
+1. Read `prompt.md` and list all explicit constraints.
+2. Check whether the response provides runnable code, not only an architecture description.
+3. Validate role-specific behavior for Employee, Manager, and Admin users.
+4. Test leave-specific edge cases:
+   - weekend exclusion
+   - insufficient balance
+   - overlapping pending requests
+   - manager acting outside their department
+   - admin overriding an already processed request
+   - deactivating a user with pending requests
+5. Review security controls and confirm that sensitive data, especially password hashes, is never returned.
+6. Inspect frontend responsiveness and accessibility requirements.
+7. Review documentation for setup, environment variables, deployment, test users, and limitations.
+8. Assign a final score using the 1-7 scale and explain the decision with concrete evidence.
+
+### What a Strong Response Should Demonstrate
+
+A high-quality response should provide more than descriptions. It should include complete or near-complete files, clear module boundaries, working API flows, realistic data models, safe authentication, meaningful validation, readable UI components, and documentation that lets another developer run and evaluate the project.
+
+The justification should compare responses directly, cite specific implementation evidence, identify missing requirements, explain tradeoffs, and end with a clear verdict.
 
 ## Comparison Result
 
