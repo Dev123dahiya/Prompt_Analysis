@@ -30,9 +30,9 @@ class LeaveManagementService:
         self.seed()
 
     def seed(self) -> None:
-        self.add_user("Alice Employee", "employee@example.com", "engineering", "employee", "2024-01-15")
-        self.add_user("Maya Manager", "manager@example.com", "engineering", "manager", "2022-03-01")
-        self.add_user("Noah Admin", "admin@example.com", "people", "admin", "2021-06-01")
+        self.add_user("Dev", "dev@gmail.com", "engineering", "employee", "2024-01-15")
+        self.add_user("Khushi", "khushi@gmail.com", "engineering", "manager", "2022-03-01")
+        self.add_user("Arun", "arun@gmail.com", "people", "admin", "2021-06-01")
 
     def add_user(
         self,

@@ -120,9 +120,9 @@ http://127.0.0.1:8000
 
 | Role | Email | Password |
 | --- | --- | --- |
-| Employee | `devkumar@gmail.com` | `pssword123!` |
-| Manager | `mnager@example.com` | `psswor11` |
-| Admin | `heh@gmail.com` | `psswrd1` |
+| Employee | `dev@gmail.com` | `Password123!` |
+| Manager | `khushi@gmail.com` | `Password123!` |
+| Admin | `arun@gmail.com` | `Password123!` |
 
 ## Evaluation Methodology
 Response solutions must be judged on the basis of implementation, completeness, correctness, maintainability, and the justification provided. The purpose of evaluation is not just to see that the response solution includes the required features, but whether such a solution would be possible to develop and implement.

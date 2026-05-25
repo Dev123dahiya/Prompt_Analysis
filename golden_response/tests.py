@@ -4,9 +4,9 @@ from .service import LeaveManagementService
 
 def run_self_test() -> None:
     service = LeaveManagementService()
-    employee, _ = service.authenticate("employee@example.com", "Password123!")
-    manager, _ = service.authenticate("manager@example.com", "Password123!")
-    admin, _ = service.authenticate("admin@example.com", "Password123!")
+    employee, _ = service.authenticate("dev@gmail.com", "Password123!")
+    manager, _ = service.authenticate("khushi@gmail.com", "Password123!")
+    admin, _ = service.authenticate("arun@gmail.com", "Password123!")
 
     request = service.create_request(
         employee,
@@ -41,7 +41,7 @@ def run_self_test() -> None:
     assert service.requests[request.id].admin_comment == "Admin override"
 
     report = service.generate_report(admin, "2026-01-01", "2026-12-31")
-    assert "Alice Employee" in report
+    assert "Dev" in report
     assert "manager comment" in report
 
     pending = service.create_request(

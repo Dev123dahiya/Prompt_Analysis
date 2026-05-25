@@ -92,9 +92,9 @@ http://127.0.0.1:8000
 
 | Role | Email | Password |
 | --- | --- | --- |
-| Employee | `employee@example.com` | `Password123!` |
-| Manager | `manager@example.com` | `Password123!` |
-| Admin | `admin@example.com` | `Password123!` |
+| Employee | `dev@gmail.com` | `Password123!` |
+| Manager | `khushi@gmail.com` | `Password123!` |
+| Admin | `arun@gmail.com` | `Password123!` |
 
 ## Covered Prompt Requirements
 
