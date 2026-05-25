@@ -1,29 +1,75 @@
 # Prompt Analysis Benchmark
 
-This repository contains a benchmark prompt, an evaluation framework, and a golden reference implementation for a domain-specific Leave Management System task.
+![Language](https://img.shields.io/badge/language-Python-blue)
+![Benchmark](https://img.shields.io/badge/type-LLM%20coding%20benchmark-green)
+![Domain](https://img.shields.io/badge/domain-Leave%20Management-orange)
 
-The benchmark asks an LLM to design and implement a MERN-stack leave management platform for a mid-sized firm. The system includes Employee, Manager, and Admin workflows, role-based authorization, leave balance enforcement, overlap prevention, policy management, CSV reporting, and production-oriented security requirements.
+This repository contains a complete LLM benchmark package for evaluating responses to a domain-specific full-stack coding task.
+
+The benchmark focuses on a **Leave Management System** for a mid-sized company. It tests whether an LLM can understand realistic product requirements, implement business rules, reason about security, and produce maintainable production-style code.
+
+## What This Repository Includes
+
+| File | Purpose |
+| --- | --- |
+| `prompt.md` | The original coding prompt given to an LLM. |
+| `justification.md` | A structured comparison framework for evaluating Response A and Response B. |
+| `golden_response.py` | A self-contained executable reference solution for the core backend/domain logic. |
+| `README.md` | Project overview, run instructions, and evaluation methodology. |
 
 ## Repository Structure
 
 ```text
-.
-├── prompt.md
-├── justification.md
-├── golden_response.py
-└── README.md
+Prompt_Analysis/
+|-- prompt.md
+|-- justification.md
+|-- golden_response.py
+`-- README.md
 ```
 
-## Files
+## Benchmark Overview
 
-- `prompt.md` contains the original domain-specific coding prompt.
-- `justification.md` contains the side-by-side evaluation framework and final verdict comparing Response A and Response B.
-- `golden_response.py` contains a single-file executable reference implementation of the core backend/domain behavior.
-- `README.md` explains how to run the benchmark reference and how the evaluation methodology works.
+The prompt asks an LLM to build a MERN-stack Leave Management System with:
 
-## Running the Golden Response
+- Employee, Manager, and Admin roles.
+- Secure JWT authentication.
+- Role-based dashboards.
+- Leave request creation, editing, cancellation, approval, and rejection.
+- Leave balance enforcement.
+- Weekday-only leave calculation.
+- Pending request overlap prevention.
+- Department-restricted manager permissions.
+- Admin policy configuration.
+- CSV report generation.
+- Responsive, accessible frontend requirements.
+- Deployment documentation for Vercel, Render, and MongoDB Atlas.
+
+## Golden Response
+
+`golden_response.py` is a single-file Python reference implementation. It is not intended to replace the requested MERN stack application. Instead, it provides an executable benchmark solution for the most important backend and business-rule behavior.
+
+It includes:
+
+- Authentication with signed tokens.
+- Password hashing.
+- Login and logout rate limiting.
+- Structured API-style error responses.
+- Input sanitization and email validation.
+- Weekday-only leave day calculation.
+- Balance checks against annual, sick, and casual leave policies.
+- Pending request overlap detection.
+- Manager department authorization.
+- Admin override behavior.
+- User deactivation handling.
+- CSV report generation.
+- A small HTTP API using the Python standard library.
+- Built-in self-test coverage for the main edge cases.
+
+## How to Run
 
 The golden response uses only the Python standard library.
+
+Run the built-in self-test:
 
 ```bash
 python golden_response.py --self-test
@@ -35,13 +81,13 @@ Expected output:
 Self-test passed.
 ```
 
-To start the local reference API:
+Start the local reference API:
 
 ```bash
 python golden_response.py --serve --port 8000
 ```
 
-The server runs at:
+API base URL:
 
 ```text
 http://127.0.0.1:8000
@@ -57,26 +103,45 @@ http://127.0.0.1:8000
 
 ## Evaluation Methodology
 
-Responses should be evaluated against the prompt using these criteria:
+Responses should be evaluated on both implementation quality and justification quality.
 
-- Completeness of role-based Employee, Manager, and Admin workflows.
-- Correct implementation of leave business rules, including weekday-only counting, balance enforcement, and overlap prevention.
-- Security posture, including password hashing, JWT cookie authentication, input validation, rate limiting, Helmet-style headers, and CORS restrictions.
-- API correctness, including RESTful routes, role-filtered data, structured JSON errors, and CSV report generation.
-- Frontend quality, including responsive layout, accessibility, dashboard-specific UI, and debounced search.
-- Maintainability, including clean structure, readable code, proper error handling, indexes, and deployment documentation.
+Primary evaluation criteria:
 
-The provided `justification.md` demonstrates a structured comparison between two model responses. It gives a final verdict, side-by-side analysis, and strengths and weaknesses for both responses.
+- **Requirement coverage:** Does the response satisfy the explicit prompt constraints?
+- **Executability:** Can the submitted code run with clear setup instructions?
+- **Business logic correctness:** Are leave balances, overlaps, weekday calculations, and role permissions handled correctly?
+- **Security:** Are authentication, password handling, validation, cookies, CORS, rate limits, and error messages implemented safely?
+- **Frontend quality:** Are dashboards responsive, accessible, role-aware, and user-friendly?
+- **Backend quality:** Are APIs RESTful, structured, validated, and maintainable?
+- **Documentation:** Are setup, environment variables, deployment steps, test credentials, and limitations explained clearly?
+- **Maintainability:** Is the code readable, modular, properly named, and easy to extend?
 
-## Notes on the Golden Response
+## Comparison Summary
 
-`golden_response.py` is intentionally a single executable Python file for benchmark portability. It models the core behavior required by the prompt in a way that can be run and tested immediately.
+The included `justification.md` compares two model responses:
 
-A full production answer to `prompt.md` should implement the same rules using the requested MERN stack: React, Vite, Tailwind CSS, Node.js, Express, MongoDB, Mongoose, JWT httpOnly cookies, bcryptjs, express-validator, helmet, cors, and express-rate-limit.
+- **Response A:** Strong architectural explanation, but mostly conceptual and not directly executable.
+- **Response B:** Stronger practical implementation with schemas, middleware, routes, dashboard code, CSV export, and README content.
+
+Final verdict:
+
+```text
+Response B is better than Response A.
+Likert Score: 6
+```
 
 ## Known Limitations
 
 - Public holiday handling is not included.
 - Email notifications are not included.
-- The single-file golden response uses in-memory storage rather than MongoDB.
-- The single-file golden response is a benchmark reference, not a complete deployed MERN application.
+- The golden response uses in-memory storage instead of MongoDB.
+- The Python file is a benchmark reference, not a full MERN deployment.
+- A production implementation should still use the requested stack: React, Vite, Tailwind CSS, Express, MongoDB, Mongoose, JWT httpOnly cookies, bcryptjs, express-validator, helmet, cors, and express-rate-limit.
+
+## Submission Link
+
+GitHub repository:
+
+```text
+https://github.com/Dev123dahiya/Prompt_Analysis
+```
