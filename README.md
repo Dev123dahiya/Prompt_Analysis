@@ -16,7 +16,7 @@ The benchmark is centered on a **Leave Management System** for a mid-sized organ
 | Resource | URL |
 | --- | --- |
 | GitHub Repository | `https://github.com/Dev123dahiya/Prompt_Analysis` |
-| Live Deployment | `https://leave-request-management-system.vercel.app` |
+| Live Deployment | `https://leave-request-management-system.vercel.app/` |
 
 ## Repository Contents
 
