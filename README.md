@@ -130,12 +130,15 @@ Response solutions must be judged on the basis of implementation, completeness, 
 ### Scoring Rubric
 
 | Category | Weight | What to Evaluate |
-| --- | ---: | --- || Coverage of Requirements | 20% | Ensures all explicitly stated prompt requirements have been met, such as role dashboards, REST endpoints, leave policies, CSV files, validation, documentation, and deployment instructions. |
-| Correctness of Functionality | 20% | Validates real-life business logic: weekday only day calculation, balance validation, overlapping pending leave prevention, department restriction for managers, admin overrides, and user deactivation management. |
-| Backend Quality | 15% | Evaluates API design, express routing, mongoose schemas, indexes, middleware use, pagination, filters, error handling through JSON response format, and separation of concerns. |
-| Security and Validation | 15% | Checks for password encryption, http-only cookies, secured cookies, cors headers, helmet, rate limiting, sanitizing user inputs, validating emails, and not leaking any private information. |
-| Frontend Quality | 10% | Ensures role-based dashboard, responsiveness of the designs, modal working, accessibility of the controls, proper ARIA labeling, keyboard navigation, lazy loading of the routes, and search bar debounce. || Documentation and Deployment Readiness | 10% | Confirms that README is readable, installation process is possible locally, list of environment variables, seeding of database, authentication details, deployment on Vercel, Render, MongoDB Atlas, and constraints understanding. |
-| Maintainability & Organization | 10% | Evaluates the code quality, modularity of the code, consistent variable names, comments in the code, proper handling of the errors, considerations for the edge cases, and extent of code maintainability. |
+|---|---|---|
+| Coverage of Requirements | 20% | Ensures all explicitly stated project requirements are implemented, including role-based dashboards, REST APIs, leave policies, CSV export/import support, validation, documentation, and deployment instructions. |
+| Correctness of Functionality | 20% | Validates business logic such as weekday-only leave calculation, leave balance validation, prevention of overlapping pending leaves, department restrictions for managers, admin override capabilities, and user deactivation handling. |
+| Backend Quality | 15% | Evaluates API architecture, Express routing structure, Mongoose schema design, middleware usage, pagination, filtering, indexing, proper JSON response handling, and separation of concerns. |
+| Security and Validation | 15% | Checks implementation of password hashing, HTTP-only cookies, secure authentication flow, CORS configuration, Helmet security headers, rate limiting, input sanitization, email validation, and protection against sensitive data leakage. |
+| Frontend Quality | 10% | Ensures responsive UI design, role-based dashboards, modal functionality, accessibility support, ARIA labeling, keyboard navigation, lazy-loaded routes, and optimized search with debounce handling. |
+| Documentation and Deployment Readiness | 10% | Confirms that the README is properly structured, installation steps work locally, environment variables are documented, database seeding is explained, authentication flow is described, and deployment instructions for Vercel, Render, and MongoDB Atlas are provided. |
+| Maintainability & Organization | 10% | Evaluates code readability, modular folder structure, naming consistency, comments/documentation quality, proper error handling, edge-case coverage, and long-term maintainability of the codebase. |
+
 ### Suggested Rating Scale
 
 | Score | Meaning |
