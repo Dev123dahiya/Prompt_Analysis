@@ -21,7 +21,7 @@ The Benchmark Repository includes a comprehensive benchmark set whcih will aid i
 | --- | --- |
 | `prompt.md` | Prompt written by me to make the response. |
 | `justification.md` | Structured comparison framework and final verdict for Response A vs Response B. |
-| `golden_response/` | Modular executable reference implementation for the core backend/domain behavior. |
+| `golden_response/golden_respone.py` | Modular executable reference implementation for the core backend/domain behavior. |
 | `golden_response/goldenresponse.md` | Best responce I got to do my project. |
 | `README.md` | All the project overveiw and the evaluation criterias. |
 
