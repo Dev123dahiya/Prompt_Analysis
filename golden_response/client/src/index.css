@@ -1,0 +1,88 @@
+:root {
+  --bg: #eef5ff;
+  --bg-accent: #d6e8ff;
+  --surface: rgba(250, 253, 255, 0.8);
+  --surface-soft: rgba(236, 245, 255, 0.86);
+  --border: rgba(124, 164, 210, 0.24);
+  --border-strong: rgba(95, 147, 206, 0.4);
+  --text: #4b6483;
+  --text-soft: #5f7794;
+  --text-strong: #12243a;
+  --accent: #4f97ff;
+  --accent-strong: #1660c6;
+  --pill-bg: rgba(22, 96, 198, 0.12);
+  --font-body: Cambria, Georgia, serif;
+  --font-heading: "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-mono: "Courier New", monospace;
+
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(140, 192, 255, 0.5), transparent 32%),
+    radial-gradient(circle at top right, rgba(79, 151, 255, 0.22), transparent 24%),
+    linear-gradient(180deg, #eef5ff 0%, #e3f0ff 100%);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: transparent;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.38;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  color: var(--text-strong);
+}
+
+code {
+  font-family: var(--font-mono);
+}
