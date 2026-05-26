@@ -4,7 +4,7 @@ Response B is much better than Response A because Response B directly implements
 
 Response B also demonstrates stronger production readiness along with  middleware protection, validation layers, transactional workflows, reporting systems, and the neccessary modular architecture. Although it contains a few minor incomplete references, they are minor issues as compared to Response A’s major task mismatch, making Response B clearly superior overall.
 
-**Side-by-Side Comparison**
+## **Side-by-Side Comparison**
 
 In Response A, the emphasis is laid on building a portfolio-level frontend application with animations via Framer Motion, modal to contact, and integration of Nodemailer. Although the coding is elegant, it fails to meet the requirements set out by the Leave Management System prompt since the important enterprise-level functionalities such as RBAC, workflow management, authorization, dashboards, reporting systems, database management, and others are completely absent.
 
@@ -12,7 +12,7 @@ However, Response B fully implements the Leave Management System that was requir
 
 From a technical point of view, Response B is a more complete solution, and thus more suitable for a production environment. It covers all aspects of backend engineering, frontend dashboards, validation systems, route configurations, testing, and others while Response A mostly covers frontend interactions and a contact form system.
 
-**Strengths & Weaknesses**
+## **Strengths & Weaknesses**
 
 Response A
 
