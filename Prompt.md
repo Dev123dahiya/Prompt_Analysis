@@ -66,7 +66,7 @@ The final application must include:
 * Scalable backend architecture  
   ---
 
-  # **UI and Animation Requirements**
+# **UI and Animation Requirements**
 
 The user interface must be modern, responsive, professional, and optimized for user experience across:
 
@@ -165,10 +165,9 @@ The codebase must remain:
 * Easy to debug  
 * Easy to extend  
   ---
+# **User Roles and Permissions**
 
-  # **User Roles and Permissions**
-
-  ## **1\. Employee**
+## **1\. Employee**
 
 Employees should be able to:
 
@@ -191,8 +190,7 @@ Employees must not be able to:
 * Access records of other employees  
 * Modify approval workflows  
   ---
-
-  ## **2\. Manager**
+## **2\. Manager**
 
 Managers should be able to:
 
@@ -212,7 +210,7 @@ Managers must not be able to:
 * Change authentication configurations  
   ---
 
-  ## **3\. HR / Admin**
+## **3\. HR / Admin**
 
 Admins should be able to:
 
@@ -230,7 +228,7 @@ Admins should be able to:
 * Handle exceptional approval scenarios  
   ---
 
-  ## **4\. Super Admin**
+## **4\. Super Admin**
 
 Super Admins should have access to:
 
@@ -245,7 +243,7 @@ Super Admins should have access to:
 * Administrative analytics  
   ---
 
-  # **Frontend Development Rules**
+# **Frontend Development Rules**
 
 The frontend must use:
 
@@ -290,7 +288,7 @@ Frontend state management must:
 * Synchronize approval states correctly  
   ---
 
-  # **Backend Development Rules**
+# **Backend Development Rules**
 
 The backend must follow:
 
@@ -333,7 +331,7 @@ The backend must:
 * Handle graceful shutdown safely  
   ---
 
-  # **Authentication and Authorization Requirements**
+# **Authentication and Authorization Requirements**
 
 The application must implement enterprise-grade authentication and authorization.
 
@@ -378,9 +376,9 @@ The system must protect against:
 * Session hijacking  
   ---
 
-  # **Dashboard Requirements**
+# **Dashboard Requirements**
 
-  ## **Employee Dashboard**
+## **Employee Dashboard**
 
 The employee dashboard should display:
 
@@ -396,7 +394,7 @@ The employee dashboard should display:
 * Leave history summaries  
   ---
 
-  ## **Manager Dashboard**
+## **Manager Dashboard**
 
 The manager dashboard should display:
 
@@ -408,7 +406,7 @@ The manager dashboard should display:
 * Team availability overview  
   ---
 
-  ## **Admin Dashboard**
+## **Admin Dashboard**
 
 The admin dashboard should display:
 
@@ -422,7 +420,7 @@ The admin dashboard should display:
 * System activity summaries  
   ---
 
-  # **Leave Request System Requirements**
+# **Leave Request System Requirements**
 
 The system must support:
 
@@ -460,7 +458,7 @@ Admins should also be able to:
 * Configure leave carry-forward rules  
   ---
 
-  # **Leave Request Form Requirements**
+# **Leave Request Form Requirements**
 
 The leave request form must include:
 
@@ -488,7 +486,7 @@ The form must:
 * Provide user-friendly feedback  
   ---
 
-  # **Input Validation Requirements**
+# **Input Validation Requirements**
 
 All validations must run on both frontend and backend.
 
@@ -541,7 +539,7 @@ Validation must use:
 * Zod or equivalent schema validation libraries  
   ---
 
-  # **Approval Workflow Requirements**
+# **Approval Workflow Requirements**
 
 The leave approval workflow should follow this sequence:
 
@@ -567,7 +565,7 @@ Workflow rules must:
 * Support future multi-level approvals  
   ---
 
-  # **Notification System Requirements**
+# **Notification System Requirements**
 
 The system must support:
 
@@ -606,7 +604,7 @@ Optional integrations may include:
 * Firebase notifications  
   ---
 
-  # **Backend Requirements**
+# **Backend Requirements**
 
 The backend should expose secure REST APIs for:
 
@@ -642,7 +640,7 @@ The backend must:
 * Support scalable architecture  
   ---
 
-  # **API Engineering Rules**
+# **API Engineering Rules**
 
 All APIs must follow RESTful conventions.
 
@@ -670,7 +668,7 @@ The backend must implement:
 * Rate limiting middleware  
   ---
 
-  # **API Response Requirements**
+# **API Response Requirements**
 
 All APIs must return structured JSON responses.
 
@@ -710,7 +708,7 @@ Example error response:
     
   ---
 
-  # **Data Processing Requirements**
+# **Data Processing Requirements**
 
 Before processing any input, the system must:
 
@@ -733,7 +731,7 @@ The system must also:
 * Prevent duplicate processing  
   ---
 
-  # **Database Requirements**
+# **Database Requirements**
 
 The application should use:
 
@@ -773,7 +771,7 @@ The database must:
 * Support future scalability  
   ---
 
-  # **File Upload Engineering Rules**
+# **File Upload Engineering Rules**
 
 File uploads must:
 
@@ -796,7 +794,7 @@ Optional storage integrations may include:
 * Firebase Storage  
   ---
 
-  # **Security Requirements**
+# **Security Requirements**
 
 The application must protect against:
 
@@ -875,7 +873,7 @@ The backend must:
 * Return structured error responses  
   ---
 
-  # **Logging and Monitoring Rules**
+# **Logging and Monitoring Rules**
 
 The system must maintain logs for:
 
@@ -902,7 +900,7 @@ Monitoring must support:
 * Audit tracking  
   ---
 
-  # **Reporting and Analytics Requirements**
+# **Reporting and Analytics Requirements**
 
 The admin system should support:
 
@@ -928,7 +926,7 @@ Analytics should:
 * Be easy to understand  
   ---
 
-  # **Search, Filter, and Sorting Requirements**
+# **Search, Filter, and Sorting Requirements**
 
 The application should support:
 
@@ -954,7 +952,7 @@ The system should also support:
 * Empty result states  
   ---
 
-  # **Performance and Scalability Requirements**
+# **Performance and Scalability Requirements**
 
 Frontend optimization must include:
 
@@ -981,7 +979,7 @@ The architecture should support:
 * Monitoring tools  
   ---
 
-  # **Accessibility Requirements**
+# **Accessibility Requirements**
 
 Accessibility implementation must include:
 
@@ -1016,9 +1014,9 @@ Responsive behavior must include:
 * Proper spacing  
   ---
 
-  # **Technology Stack**
+# **Technology Stack**
 
-  ## **Frontend**
+## **Frontend**
 
 Use:
 
@@ -1029,7 +1027,7 @@ Use:
 * Framer Motion where needed  
   ---
 
-  ## **Backend**
+## **Backend**
 
 Use:
 
@@ -1041,7 +1039,7 @@ Use:
 * dotenv  
   ---
 
-  ## **Database**
+## **Database**
 
 Use:
 
@@ -1050,7 +1048,7 @@ Use:
 * PostgreSQL  
   ---
 
-  ## **Optional Technologies**
+## **Optional Technologies**
 
 Optional integrations may include:
 
@@ -1061,7 +1059,7 @@ Optional integrations may include:
 * Queue systems  
   ---
 
-  # **Folder Structure Requirements**
+# **Folder Structure Requirements**
 
 The project should follow a scalable structure as following:
 
@@ -1129,7 +1127,7 @@ Production deployment must include:
 
   # 
 
-  # **Testing Requirements**
+# **Testing Requirements**
 
 The system should include testing for:
 
@@ -1148,7 +1146,7 @@ Testing should cover:
 * Security-related failures  
   ---
 
-  # **Documentation Requirements**
+# **Documentation Requirements**
 
 The project documentation should include:
 
@@ -1170,7 +1168,7 @@ Documentation should remain:
 * Easy to follow  
   ---
 
-  # **AI Code Generation Rules**
+# **AI Code Generation Rules**
 
 Generate:
 
@@ -1200,8 +1198,7 @@ The generated project must:
 * Be maintainable  
 * Be suitable for real-world production usage  
   ---
-
-  # **Final Output Requirements**
+# **Final Output Requirements**
 
 The final Leave Management System must include:
 
