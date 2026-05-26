@@ -4,34 +4,7 @@ As a Senior Full Stack Developer specialized in enterprise-grade SaaS applicatio
 
 The application must follow all the  software engineering standards.The final system should feel like a real-world HRMS platform used inside large organizations instead of a simple academic project.
 
-The project must strictly follow:
-
-* Clean architecture principles  
-* Scalable folder structures  
-* Modular backend development  
-* Reusable frontend components  
-* Production-grade API design  
-* Secure authentication and authorization  
-* Centralized validation systems  
-* Structured error handling  
-* Logging and monitoring  
-* Performance optimization  
-* Accessibility standards  
-* Deployment readiness  
-* Enterprise-level security practices
-
-The final application should be suitable for:
-
-* Real-world company usage  
-* SaaS-style HRMS systems  
-* Startup MVPs  
-* Enterprise demonstrations  
-* Portfolio projects  
-* Internship showcases  
-* Production-grade deployments  
-  ---
-
-  # **Objective**
+# **Objective**
 
 Develop a complete full-stack project named as the Leave Management System that will allow employees to apply for leave, also the  managers to approve or reject requests for those leave, and administrators to manage company leave policies, their records, and organization-wide leave operations efficiently.
 
@@ -44,27 +17,6 @@ The system must:
 * Provide notifications and real-time updates  
 * Generate reports and analytics  
 * Support future scalability
-
-The final application must include:
-
-* Authentication system  
-* Role-based authorization  
-* Employee dashboard  
-* Manager dashboard  
-* Admin dashboard  
-* Leave request workflow  
-* Leave approval workflow  
-* Leave balance management  
-* Notification system  
-* Analytics and reporting  
-* Audit logging system  
-* File upload support  
-* Secure REST APIs  
-* Centralized validation system  
-* Production-level error handling  
-* Responsive and accessible UI  
-* Scalable backend architecture  
-  ---
 
 # **UI and Animation Requirements**
 
