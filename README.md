@@ -12,8 +12,8 @@ The Benchmark Repository includes a comprehensive benchmark set whcih will aid i
 
 | Resource | URL |
 | --- | --- |
-| GitHub Repository | `https://github.com/Dev123dahiya/Prompt_Analysis` |
-| Live Deployment | `https://leave-request-management-system.vercel.app/` |
+| GitHub Repository | https://github.com/Dev123dahiya/Prompt_Analysis |
+ Live Deployment | https://leave-request-management-system.vercel.app/ 
 
 ## Repository Contents
 
